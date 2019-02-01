@@ -5,4 +5,4 @@ from app import app
 @app.route('/index')
 @app.route('/welcome')
 def index():
-    return render_template('welcome.html')
+    return render_template('landing/welcome.html')
