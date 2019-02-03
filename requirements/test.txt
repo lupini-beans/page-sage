@@ -1,0 +1,4 @@
+-r common.txt
+
+pylint-flask==0.6
+pytest==4.2.0
