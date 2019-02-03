@@ -1,0 +1,8 @@
+{% extends "user/header.html" %}
+
+{% block content %}
+    <h1>My Bookshelf</h1>
+    <h4><a href="{{ url_for('my_shelf') }}">My Books</a></h4>
+    <h4><a href="{{ url_for('user_book') }}">A Book</a></h4>
+    <h4><a href="{{ url_for('bookclub') }}">A Bookclub</a></h4>
+{% endblock %}
