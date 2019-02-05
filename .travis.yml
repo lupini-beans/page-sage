@@ -5,10 +5,17 @@ language: python
 python:
   - "3.6"
 
+addons:
+  sonarcloud:
+    organization: "pagesage"
+    token:
+      secure: SONAR_TOKEN
+
 script:
   - pip install --upgrade pip
   - pip install -r ./requirements/test.txt
   - pytest --cov=./
+  - sonar-scanner
 
 after_success:
   - codecov
