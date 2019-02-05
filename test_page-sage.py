@@ -6,14 +6,6 @@ import unittest
 
 from app import app
 
-'''
-@pytest.fixture
-def client():
-    app.app.config["TESTING"] = True
-    client = app.app.test_client()
-
-    yield client
-'''
 
 class BasicRouteTests(unittest.TestCase):
 
@@ -132,10 +124,3 @@ class BasicRouteTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-'''
-def test_welcome_page():
-    with app.test_client() as cl:
-        response = cl.get('/index')
-        assert response.status_code, 404
-'''
