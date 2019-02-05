@@ -4,9 +4,49 @@
         <title>
             Bookclub Pages
         </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='./bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel='stylesheet' href="{{ url_for('static', filename='./css/bookclub.css') }}"> 
     </head>
     <body>
-        <h2><a href="{{ url_for('bookclub') }}">Bookclub Main Page</a></h2>
+        <header>
+            <div class="pos-f-t">
+                <nav id="header-bg" class="navbar navbar-dark">
+                <div class="d-flex justify-content-start">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <button class="bg-transparent border-0 px-3">
+                    <a href="{{ url_for('bookclub') }}" >
+                            <i class="fas fa-users text-light" style="font-size:24px;"></i>
+                    </a>
+                    </button>
+                    <a class="navbar-brand px-2 header-font" href="#" style="font-size:24px;">Username</a>
+                </div>
+                <div class="d-flex justify-content-center text-light" style="font-size:32px;">Page Sage</div>
+                <div class="d-flex justify-content-end">
+                <form class="form-inline mt-2 mt-md-0 pl-3">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search Books" aria-label="Search">
+                    <a href="{{ url_for('search') }}">
+                    <button class="btn btn-outline-light my-2 my-sm-0 search-button" type="submit">Search</button>
+                    </a>
+                </form>
+                <button class="bg-transparent border-0 pl-3 pr-2">
+                    <a href="{{ url_for('profile') }}" >
+                        <i class="fas fa-user-astronaut text-light" style="font-size:24px;"></i>
+                    </a>
+                </button>
+                <button class="bg-transparent border-0">
+                    <a href="{{ url_for('index') }}">
+                        <i class="fas fa-sign-out-alt text-light" style="font-size:24px;"></i>
+                    </a>
+                </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse"></div>
+                </nav>
+            </div>
+        </header>
+
         <h2><a href="{{ url_for('bookclub_settings') }}">Bookclub Settings</a></h2>
         <h2><a href="{{ url_for('bookclub_search') }}">Search</a></h2>
         <br>
