@@ -14,8 +14,8 @@ addons:
 
 script:
   - sonar-scanner
-  - pip install --upgrade pip
-  - pip install -r ./requirements/test.txt
+  - pip install --upgrade pip > /dev/null
+  - pip install -r ./requirements/test.txt > /dev/null
   - pytest --cov=./
 
 after_success:
