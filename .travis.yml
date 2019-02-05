@@ -10,11 +10,10 @@ python:
 addons:
   sonarcloud:
     organization: "pagesage"
-    token:
-      secure: "LLdG1BEpBZetC5QjKCBeT0D3Jp8YqUXA0FvsUzDK4im5jZb7Lm2/vVF92mjpYqoDo4CpIXajR7B1x8LM9X77ugGTvCKJb0ztkV3la/BK++F71ahpAk95y6K5ixwHDEGZPRFQuacbWyZuvo4jI9jD3RDeQw4c7v2li3PM5fFB4eXo46K2s9Kb349YKylqrQPfa5E96TMYO//q7Uj/7+xW+0a3NYQ8IUvNtyLT/EYYGvzEKQk2jF4/LNtA+/jK8qoL69kCe80HowK4Rl1iTxm0+JgcXZF0PuAcUlGE2T2XkCgaoy/pF3bbvEB9kzb4OFE13KGukWm+OqVNYYFZoI2Dz1n+xIDABvjtApk1VcxWJTQAJp5xrkSkdIJmO3laOAIXibdZ9AHoeVntGkWB43AbEeKqTntXq3ux/4JhguOYdvVQiLOsOwQGDZlBJJayBanBV1LHSf+2lP8p1gDB7GwnR/ADBqQ9YrU4il069ey+c8mmIeZGk6sXANfoRHHqWiOO02nwpRcnb0l3XakJ6J5AhPOnnUm8mDXLAMzJzhEMzoBsp3Lz+al457QmzQc3SRucypIYKGxTUv90VpwhSlH4FETducCdTje1MszmUStaBRG7apnOb4ddc8lYtr01ZSaTNJyX/9OSqFFCGQNCwJrU7eDvxoszHVn7W9EbD9iArsY="
+    token: $SONAR_TOKEN
 
 script:
-  - sonar-scanner -Dsonar.login=${SONAR_TOKEN}
+  - sonar-scanner
   - pip install --upgrade pip
   - pip install -r ./requirements/test.txt
   - pytest --cov=./
