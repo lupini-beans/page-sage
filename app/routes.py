@@ -2,7 +2,10 @@ from flask import render_template
 from app import app
 
 
-#### Landing Routes
+####################
+## Landing Routes ##
+####################
+
 @app.route('/')
 @app.route('/index')
 @app.route('/welcome')
@@ -14,11 +17,10 @@ def about():
     return render_template('landing/about.html')
 
 
-#################################################################
-#################################################################
+##################
+## AuthN Routes ##
+##################
 
-
-#### Authn Routes
 @app.route('/login')
 def login():
     return render_template('authn/login.html')
@@ -28,11 +30,10 @@ def signup():
     return render_template('authn/signup.html')
 
 
-#################################################################
-#################################################################
+#################
+## User Routes ##
+#################
 
-
-#### User Routes
 ## All user routes should eventually be modified to have dynamic links
 ## such that the urls are /<username>/profile, etc.
 @app.route('/user')
@@ -59,11 +60,10 @@ def user_settings():
     return render_template('user/settings.html')
 
 
-#################################################################
-#################################################################
+#####################
+## Bookclub Routes ##
+#####################
 
-
-#### Bookclub Routes
 ## Bookclub routes should eventually be: /bookclub/<club_name>
 @app.route('/bookclub')
 @app.route('/club')
