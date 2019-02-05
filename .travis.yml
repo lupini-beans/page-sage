@@ -1,0 +1,14 @@
+os: linux
+
+language: python
+
+python:
+  - "3.6"
+
+script:
+  - pip install --upgrade pip
+  - pip install -r ./requirements/test.txt
+  - pytest --cov=./
+
+after_success:
+  - codecov
