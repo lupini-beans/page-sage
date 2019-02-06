@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request, redirect
 from app import app
 
 
@@ -99,3 +99,22 @@ def bookclub_suggestions():
 @app.route('/bookclub/book')
 def bookclub_book():
     return render_template('bookclub/book.html')
+
+@app.route('/bookclub/headersearch', methods=["POST","GET"])
+def bookclub_headersearch():
+    if request.method == "POST":
+        '''WIP
+        if request.form.get("author"):
+            return render_template("search.html", books = requests.get("https://www.googleapis.com/books/v1/volumes?q=" +
+                                   request.form.get("title") + "+inauthor:"+ request.form.get("author") + "&key=AIzaSyBtprivgL2dXOf8kxsMHuELzvOAQn-2ZZM").json())
+
+
+        if request.form.get("isbn"):
+            return render_template("search.html", books = requests.get("https://www.googleapis.com/books/v1/volumes?q=" +
+                                   request.form.get("title") + "+isbn:"+ request.form.get("isbn") + "&key=AIzaSyBtprivgL2dXOf8kxsMHuELzvOAQn-2ZZM").json())
+                                   '''
+        return render_template("search.html", books = requests.get("https://www.googleapis.com/books/v1/volumes?q=" +
+                               request.form.get("title") + "&key=AIzaSyBtprivgL2dXOf8kxsMHuELzvOAQn-2ZZM").json())
+    #for future use if someone tries to use method outside of search
+    else:
+        return render_template('search.html')
