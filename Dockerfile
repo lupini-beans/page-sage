@@ -1,11 +1,9 @@
-# This is the dockerfile to run and package the PageSage webapp
-FROM python:3.6-alpine
-MAINTAINER boxoforanmore
+FROM tiangolo/meinheld-gunicorn-flask:python3.6-alpine3.8
+
 ADD . .
-RUN pip install -r ./requirements.txt \
-    && export FLASK_APP='page-sage.py'
+
+#ENV GUNICORN_PATH ./gunicorn_conf.py
+ENV MODULE_NAME "app"
+ENV VARIABLE_NAME "app"
 
 
-ENTRYPOINT ["python"]
-
-CMD ["page-sage.py"]
