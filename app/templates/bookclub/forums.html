@@ -1,10 +1,10 @@
 {% extends "bookclub/header.html" %}
 
 {% block content %}
-    <h1>General/Archived Forums</h1>
-    <h4><a href="{{ url_for('bookclub_shelf') }}">Bookclub Bookshelf</a></h4>
-    <h4><a href="{{ url_for('forums') }}">Forums</a></h4>
-    <h4><a href="{{ url_for('forum') }}">Active Book Forum</a></h4>
-    <h4><a href="{{ url_for('bookclub_suggestions') }}">Suggestions</a></h4>
-    <h4><a href="{{ url_for('bookclub_settings') }}">Bookclub Settings</a></h4>
+    <h1 class="text-light">General/Archived Forums</h1>
+    <h4><a href="{{ url_for('bookclub_shelf') }}" class="text-light">Bookclub Bookshelf</a></h4>
+    <h4><a href="{{ url_for('forums') }}" class="text-light">Forums</a></h4>
+    <h4><a href="{{ url_for('forum') }}" class="text-light">Active Book Forum</a></h4>
+    <h4><a href="{{ url_for('bookclub_suggestions') }}" class="text-light">Suggestions</a></h4>
+    <h4><a href="{{ url_for('bookclub_settings') }}" class="text-light">Bookclub Settings</a></h4>
 {% endblock %}

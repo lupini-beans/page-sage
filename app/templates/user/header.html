@@ -11,10 +11,11 @@
     <link rel='stylesheet' href="{{ url_for('static', filename='./css/user.css') }}">
 </head>
 
+
 <body id="main-bg">
     <header>
         <div class="pos-f-t">
-            <nav id="header-bg" class="navbar navbar-dark">
+            <nav id="header-bg" class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow">
                 <div class="d-flex justify-content-start">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,12 +42,66 @@
                         </a>
                     </button>
                 </div>
-                <div class="collapse navbar-collapse" id="navbarCollapse"></div>
-          </nav>
+            </nav>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <nav id="sidebar-bg" class="col-md-2 d-none d-md-block sidebar">
+                        <div class="sidebar-sticky">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">
+                                        <span data-feather="home"></span>
+                                        Dashboard <span class="sr-ony">(current)</span>
+                                    </a> 
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file"></span>
+                                        Orders
+                                    </a>
+                                </li>
+                            </ul>
+                            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                                <span>Saved reports</span>
+                                <a class="d-flex align-items-center text-muted" href="#">
+                                    <span data-feather="plus-circle"></span>
+                                </a>
+                            </h6>
+                            <ul class="nav flex-column mb-2">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Current month
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Last quarter
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Social engagement
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Year-end sale
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </div>
     </header>
 
-    <h2><a href="{{ url_for('user_settings') }}">User Settings</a></h2>
+    <h2><a href="{{ url_for('user_settings') }}" class="text-light">User Settings</a></h2>
     <br>
     {% block content %}
     {% endblock %}
