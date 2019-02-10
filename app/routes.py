@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect
 from app import app
-
+import config.js
 
 ####################
 ## Landing Routes ##
@@ -100,11 +100,10 @@ def bookclub_suggestions():
 def bookclub_book():
     return render_template('bookclub/book.html')
 
-app.route('/bookclub/header',methods =["GET","POST"])
+app.route('/user/search',methods =["GET","POST"])
 def bookclub_booksearch():
-    if request.method == "POST":
+    if request.method == "POST":'
         return render_template("searchResult.html", books= request.get("https://www.googleapis.com/books/v1/volumes?q=" +
-        request.form.get("title")+Key).json())
+        request.form.get("title")+'AIzaSyB9Q2aWWmNUHPG60ZK3RQczqe0mt_TAyHc').json())
     else:
         return render_template("searchResult.html")
-
