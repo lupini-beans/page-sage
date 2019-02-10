@@ -100,7 +100,7 @@ def bookclub_suggestions():
 def bookclub_book():
     return render_template('bookclub/book.html')
 
-app.route('/user/search',methods =["GET","POST"])
+app.route('/user/header',methods =["GET","POST"])
 def bookclub_booksearch():
     if request.method == "POST":
         return render_template("searchResult.html", books= request.get("https://www.googleapis.com/books/v1/volumes?q=" +
