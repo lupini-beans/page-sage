@@ -1,8 +1,10 @@
 {% extends "user/header.html" %}
 
 {% block content %}
-    <h1 class="text-light">User Profile</h1>
-    <h4><a href="{{ url_for('my_shelf') }}" class="text-light">My Books</a></h4>
-    <h4><a href="{{ url_for('user_book') }}" class="text-light">A Book</a></h4>
-    <h4><a href="{{ url_for('bookclub') }}" class="text-light">A Bookclub</a></h4>
+    <h1>User Profile</h1>
+    <div>
+        <a href="{{ url_for('user_book') }}">
+            <i class="fas fa-book" style="color: #402116; font-size: 40px;""></i>
+        </a>
+    </div>
 {% endblock %}

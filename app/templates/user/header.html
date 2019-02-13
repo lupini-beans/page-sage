@@ -12,7 +12,7 @@
 </head>
 
 
-<body id="main-bg">
+<body class="main-scheme">
     <nav id="header-bg" class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow">
         <div class="d-flex justify-content-start">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -45,21 +45,48 @@
     <div class="container-fluid w-100 mt-5" style="height:100vh;">
         <div class="row w-100" style="height:100vh;">
             <div id="sidebar-bg" class="col-1 pt-2 shadow text-light">
-                <div class="text-center text-light py-2 border-bottom border-light">
+                <div class="text-center text-light py-2 border-bottom border-light w-100">
                     <button class="bg-transparent border-0">
                         <a href="{{ url_for('my_shelf') }}">
                             <i title="My Bookshelf" class="fas fa-bookmark text-light" style="font-size: 40px;"></i>
                         </a>
                     </button>
                 </div> 
+                <div class="text-center text-light py-2 border-bottom border-light">
+                    <button class="bg-transparent border-0">
+                        <a href="{{ url_for('bookclub') }}">
+                            <i title="A Bookclub" class="fas fa-users text-light" style="font-size: 40px;"></i>
+                        </a>
+                    </button>
+                </div> 
+                <div class="text-center text-light py-2 border-bottom border-light">
+                    <button class="bg-transparent border-0">
+                        <a href="?">
+                            <i title="Add Bookclub" class="fas fa-plus text-light" style="font-size: 40px;"></i>
+                        </a>
+                    </button>
+                </div>
+                <div class="text-center text-light py-2 border-bottom border-light">
+                    <button class="bg-transparent border-0">
+                        <a href="?">
+                            <i title="DM's" class="fas fa-envelope text-light" style="font-size: 40px;"></i>
+                        </a>
+                    </button>
+                </div>
+                <div class="text-center text-light py-2 border-top border-light">
+                    <button class="bg-transparent border-0">
+                        <a href="{{ url_for('user_settings') }}">
+                            <i title="A Bookclub" class="fas fa-cog text-light" style="font-size: 40px;"></i>
+                        </a>
+                    </button>
+                </div>
+                
             </div>
             <div id="main-bg" class="col pt-2 ml-0">
-                <h2><a href="{{ url_for('user_settings') }}" class="text-light">User Settings</a></h2>
                 {% block content %}
                 {% endblock %}
             </div> 
         </div>
     </div>
 </body>
-
 </html>
