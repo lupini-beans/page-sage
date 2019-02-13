@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>Page Sage</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='./bootstrap/css/bootstrap.min.css') }}">
         <link rel='stylesheet' href="{{ url_for('static', filename='./css/landing.css') }}">
+        <link rel='stylesheet' href="{{ url_for('static', filename='./css/user.css') }}">
     </head>
-    <body>
+    <body class="main-scheme">
         {% block content %}
         {% endblock %}
     </body>
