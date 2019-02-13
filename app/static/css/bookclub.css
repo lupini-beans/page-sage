@@ -1,7 +1,15 @@
 #header-bg {
-  background-color: #542C1D;
+  background-color: #49271B;
 }
 
-#main-bg {
-  background-color: #3D2015;
+.main-scheme {
+  background-color: #D3C6B8;
+  color: #402116;
+}
+ .main-scheme a {
+  color: #402116;
+ }
+
+#sidebar-bg {
+  background-color: #402116;
 }
