@@ -1,7 +1,6 @@
 import os
 import tempfile
 
-#import pytest
 import unittest
 
 from app import app
@@ -39,6 +38,22 @@ class BasicRouteTests(unittest.TestCase):
 
     def test_about_page(self):
         response = self.app.get('/about', follow_redirects=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_terms_page(self):
+        response = self.app.get('/terms', follow_redirects=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_tos_page(self):
+        response = self.app.get('/tos', follow_redirects=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_terms_of_service(self):
+        response = self.app.get('/terms_of_service', follow_redirects=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_privacy(self):
+        response = self.app.get('/privacy', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
   
