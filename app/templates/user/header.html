@@ -2,56 +2,89 @@
 <html>
 
 <head>
-  <title>
-    User Pages
-  </title>
-  <!-- link rel="stylesheet" href="{{ url_for('static', filename='./bootstrap/css/bootstrap.min.css') }}" -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel='stylesheet' href="{{ url_for('static', filename='./css/user.css') }}">
+    <title>
+        User Pages
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <link rel='stylesheet' href="{{ url_for('static', filename='./css/user.css') }}">
+    <script src ="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src ="{{ url_for('static', filename='./js/user.js') }}"></script>
 </head>
-
-<body id="main-bg">
-  <header>
-    <div class="pos-f-t">
-      <nav id="header-bg" class="navbar navbar-dark">
+<body class="main-scheme">
+    <nav id="header-bg" class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow">
         <div class="d-flex justify-content-start">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <button class="bg-transparent border-0 px-3">
-            <a href="{{ url_for('profile') }}">
-              <i class="fas fa-user-astronaut text-light" style="font-size:24px;"></i>
-            </a>
-          </button>
-          <a class="navbar-brand header-font" href="#" style="font-size:24px;">Username</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <button class="bg-transparent border-0 px-3">
+                <a href="{{ url_for('profile') }}">
+                    <i class="fas fa-user-astronaut text-light" style="font-size:24px;"></i>
+                </a>
+            </button>
+            <a class="navbar-brand header-font" href="#" style="font-size:24px;">Username</a>
         </div>
         <div class="d-flex justify-content-center text-light" style="font-size:32px;">Page Sage</div>
         <div class="d-flex justify-content-end">
-          <div class="container h-100">
-            <div class="d-flex justify-content-center h-100">
-              <div class="searchbar">
-                <input autocomplete="on" autofocus class="searchbar" placeholder="Enter the title of the book" id="title"
-                       name="title" type="text" required/>
-                    <br><button class="btn btn-lg btn-info centerContent" type="submit">Submit</button>
-              </div>
-            </div>
-          </div>
-          <button class="bg-transparent pl-3 border-0">
-            <a href="{{ url_for('index') }}">
-              <i class="fas fa-sign-out-alt text-light" style="font-size:24px;"></i>
-            </a>
-          </button>
+                <input id="search" type="text" placeholder="Search Books" name='title'>
+                <button id="button" class="btn btn-outline-light my-2 my-sm-0 search-button" type="button">Search</button>
+
+            <button class="bg-transparent pl-3 border-0">
+                <a href="{{ url_for('index') }}">
+                    <i class="fas fa-sign-out-alt text-light" style="font-size:24px;"></i>
+                </a>
+            </button>
         </div>
-        <div class="collapse navbar-collapse" id="navbarCollapse"></div>
-      </nav>
+    </nav>
+
+    <div class="container-fluid w-100 mt-5" style="height:100vh;">
+        <div class="row w-100" style="height:100vh;">
+            <div id="sidebar-bg" class="col-1 pt-2 shadow text-light">
+                <div class="text-center text-light py-2 border-bottom border-light w-100">
+                    <button class="bg-transparent border-0">
+                        <a href="{{ url_for('my_shelf') }}">
+                            <i title="My Bookshelf" class="fas fa-bookmark text-light" style="font-size: 40px;"></i>
+                        </a>
+                    </button>
+                </div>
+                <div class="text-center text-light py-2 border-bottom border-light">
+                    <button class="bg-transparent border-0">
+                        <a href="{{ url_for('bookclub') }}">
+                            <i title="A Bookclub" class="fas fa-users text-light" style="font-size: 40px;"></i>
+                        </a>
+                    </button>
+                </div>
+                <div class="text-center text-light py-2 border-bottom border-light">
+                    <button class="bg-transparent border-0">
+                        <a href="?">
+                            <i title="Add Bookclub" class="fas fa-plus text-light" style="font-size: 40px;"></i>
+                        </a>
+                    </button>
+                </div>
+                <div class="text-center text-light py-2 border-bottom border-light">
+                    <button class="bg-transparent border-0">
+                        <a href="?">
+                            <i title="DM's" class="fas fa-envelope text-light" style="font-size: 40px;"></i>
+                        </a>
+                    </button>
+                </div>
+                <div class="text-center text-light py-2 border-top border-light">
+                    <button class="bg-transparent border-0">
+                        <a href="{{ url_for('user_settings') }}">
+                            <i title="User Settings" class="fas fa-cog text-light" style="font-size: 40px;"></i>
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="col pt-2 ml-0">
+
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
     </div>
-  </header>
 
-  <h2><a href="{{ url_for('user_settings') }}">User Settings</a></h2>
-  <br>
-  {% block content %}
-  {% endblock %}
 </body>
-
 </html>
