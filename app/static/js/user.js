@@ -14,6 +14,3 @@ function bookSearch() {
     type: 'GET'
   });
 }
-window.onload=function(){
-    document.getElementById("button").addEventListener("click",bookSearch);
-}

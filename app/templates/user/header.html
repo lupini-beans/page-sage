@@ -29,8 +29,7 @@
         <div class="d-flex justify-content-center text-light" style="font-size:32px;">Page Sage</div>
         <div class="d-flex justify-content-end">
                 <input id="search" type="text" placeholder="Search Books" name='title'>
-                <button id="button" class="btn btn-outline-light my-2 my-sm-0 search-button" type="button">Search</button>
-
+                <button id="button" class="btn btn-outline-light my-2 my-sm-0 search-button" type="button" onclick="bookSearch">Search</button>
             <button class="bg-transparent pl-3 border-0">
                 <a href="{{ url_for('index') }}">
                     <i class="fas fa-sign-out-alt text-light" style="font-size:24px;"></i>
