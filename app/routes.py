@@ -18,12 +18,12 @@ def about():
 
 @app.route('/terms')
 @app.route('/tos')
-@app.route('/terms_of_service')
-def terms:
+@app.route('/terms-of-service')
+def terms():
     return render_template('landing/terms.html')
 
 @app.route('/privacy')
-def privacy:
+def privacy():
     return render_template('landing/privacy.html')
 
 

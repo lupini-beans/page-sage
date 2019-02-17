@@ -49,7 +49,7 @@ class BasicRouteTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_terms_of_service(self):
-        response = self.app.get('/terms_of_service', follow_redirects=True)
+        response = self.app.get('/terms-of-service', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
     def test_privacy(self):
@@ -134,6 +134,24 @@ class BasicRouteTests(unittest.TestCase):
     def test_bookclub_book(self):
         response = self.app.get('/bookclub/book')
         self.assertEqual(response.status_code, 200)
+
+    def test_bookclub_settings(self):
+        response = self.app.get('/bookclub/settings')
+        self.assertEqual(response.status_code, 200)
+
+    def test_bookclub_search(self):
+        response = self.app.get('/bookclub/search')
+        self.assertEqual(response.status_code, 200)
+
+
+    #################
+    ## Error Pages ##
+    #################
+
+    ## This test does not work currently--why 
+    def test_404_page(self):
+        response = self.app.get('/anything_should_go_here')
+        self.assertEqual(response.status_code, 404)
 
 
 
