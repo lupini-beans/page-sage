@@ -16,6 +16,17 @@ def index():
 def about():
     return render_template('landing/about.html')
 
+@app.route('/terms')
+@app.route('/tos')
+@app.route('/terms-of-service')
+def terms():
+    return render_template('landing/terms.html')
+
+@app.route('/privacy')
+def privacy():
+    return render_template('landing/privacy.html')
+
+
 
 ##################
 ## AuthN Routes ##
