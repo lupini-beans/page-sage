@@ -1,7 +1,6 @@
 import os
 import tempfile
 
-#import pytest
 import unittest
 
 from app import app
@@ -39,6 +38,22 @@ class BasicRouteTests(unittest.TestCase):
 
     def test_about_page(self):
         response = self.app.get('/about', follow_redirects=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_terms_page(self):
+        response = self.app.get('/terms', follow_redirects=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_tos_page(self):
+        response = self.app.get('/tos', follow_redirects=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_terms_of_service(self):
+        response = self.app.get('/terms-of-service', follow_redirects=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_privacy(self):
+        response = self.app.get('/privacy', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
   
@@ -119,6 +134,24 @@ class BasicRouteTests(unittest.TestCase):
     def test_bookclub_book(self):
         response = self.app.get('/bookclub/book')
         self.assertEqual(response.status_code, 200)
+
+    def test_bookclub_settings(self):
+        response = self.app.get('/bookclub/settings')
+        self.assertEqual(response.status_code, 200)
+
+    def test_bookclub_search(self):
+        response = self.app.get('/bookclub/search')
+        self.assertEqual(response.status_code, 200)
+
+
+    #################
+    ## Error Pages ##
+    #################
+
+    ## This test does not work currently--why 
+    def test_404_page(self):
+        response = self.app.get('/anything_should_go_here')
+        self.assertEqual(response.status_code, 404)
 
 
 
