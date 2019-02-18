@@ -98,36 +98,68 @@ def user_settings():
 
 ## Bookclub routes should eventually be: /bookclub/<club_name>
 @app.route('/bookclub')
-@app.route('/club')
+@app.route('/club', methods=['GET', 'POST'])
 def bookclub():
-    return render_template('bookclub/club.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('bookclub/club.html', form=form)
 
-@app.route('/bookclub/forums')
+@app.route('/bookclub/forums', methods=['GET', 'POST'])
 def forums():
-    return render_template('bookclub/forums.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('bookclub/forums.html', form=form)
 
 ## This should eventually be <bookclub_name>/<forum_name>
-@app.route('/bookclub/forum')
+@app.route('/bookclub/forum', methods=['GET', 'POST'])
 def forum():
-    return render_template('bookclub/forum.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('bookclub/forum.html', form=form)
 
-@app.route('/bookclub/settings')
+@app.route('/bookclub/settings', methods=['GET', 'POST'])
 def bookclub_settings():
-    return render_template('bookclub/settings.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('bookclub/settings.html', form=form)
 
-@app.route('/bookclub/search')
+@app.route('/bookclub/search', methods=['GET', 'POST'])
 def bookclub_search():
-    return render_template('bookclub/search.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('bookclub/search.html', form=form)
 
-@app.route('/bookclub/shelf')
+@app.route('/bookclub/shelf', methods=['GET', 'POST'])
 @app.route('/bookclub/bookshelf')
 def bookclub_shelf():
-    return render_template('bookclub/shelf.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('bookclub/shelf.html', form=form)
 
-@app.route('/bookclub/suggestions')
+@app.route('/bookclub/suggestions', methods=['GET', 'POST'])
 def bookclub_suggestions():
-    return render_template('bookclub/suggestions.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('bookclub/suggestions.html', form=form)
 
-@app.route('/bookclub/book')
+@app.route('/bookclub/book', methods=['GET', 'POST'])
 def bookclub_book():
-    return render_template('bookclub/book.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('bookclub/book.html', form=form)

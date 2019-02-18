@@ -30,10 +30,6 @@ body, html {
   height: 25%;
  }
 
-.shadow {
-  padding: 0px;
-  box-shadow: 5px 0px grey;
-}
 #sidebar-bg {
   background-color: #C0CDAD;
   /* background-image: radial-gradient(#5E453F, #3F211A) */
