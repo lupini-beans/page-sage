@@ -1,6 +1,22 @@
 {% extends "landing/base.html" %}
  
 {% block content %}
+    <!--- LOGIN/SIGNUP AREA-->
+    <div class="w3-container welcome">
+        <div class="w3-content">
+            <div class="w3-third w3-center">
+                <img class="w3-image mirror" alt="derp cat" src="{{ url_for('static', filename='./img/cat.png') }}">
+            </div>
+
+            <div class="w3-twothird w3-padding">
+                <div class="w3-bar-block w3-white w3-card" style="width: 100%">
+                    <a href="{{ url_for('bookclub_shelf') }}" class="w3-bar-item w3-button bg-transparent w3-padding-large w3-hover-white w3-large text-dark" title="Club Shelf">
+                        Club Shelf
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <h4><a href="{{ url_for('login') }}">Log In</a></h4>
     <h4><a href="{{ url_for('signup') }}">Sign Up</a></h4>
 {% endblock %}
