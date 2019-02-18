@@ -3,14 +3,16 @@ const main = $('#main').get(0);
 
 function toggleSidebar() {
     if (sidebar.style.display === "none") {
-        main.style.marginLeft="10%";
-        sidebar.style.width="10%";
+        main.style.marginLeft="12%";
+        sidebar.style.width="12%";
         sidebar.style.display = "block";
     } else {
         main.style.marginLeft="0%";
         sidebar.style.display = "none";
     }
 }
+
+window.onload = toggleSidebar
 
 function bookSearch() {
     var search = document.getElementById('search').value
