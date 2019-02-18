@@ -1,5 +1,6 @@
 from flask import render_template
 from app import app
+from app.forms import SearchForm
 
 
 ####################
@@ -48,27 +49,47 @@ def signup():
 ## All user routes should eventually be modified to have dynamic links
 ## such that the urls are /<username>/profile, etc.
 @app.route('/user')
-@app.route('/profile')
+@app.route('/profile', methods=['GET', 'POST'])
 def profile():
-    return render_template('user/profile.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('user/profile.html', form=form)
 
 ## Book should appear as /user/<book>
 ## Should book be moved to a more general page?
-@app.route('/user/book')
+@app.route('/user/book', methods=['GET', 'POST'])
 def user_book():
-    return render_template('user/book.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('user/book.html', form=form)
 
-@app.route('/my-shelf')
+@app.route('/my-shelf', methods=['GET', 'POST'])
 def my_shelf():
-    return render_template('user/my-shelf.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('user/my-shelf.html', form=form)
 
-@app.route('/user/search')
+@app.route('/user/search', methods=['GET', 'POST'])
 def search():
-    return render_template('user/search.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('user/search.html', form=form)
 
-@app.route('/user/settings')
+@app.route('/user/settings', methods=['GET', 'POST'])
 def user_settings():
-    return render_template('user/settings.html')
+    form = SearchForm()
+    if form.validate_on_submit():
+        flash('Search requested for {}'.format(form.search_item.data))
+        return redirect('/user/search')
+    return render_template('user/settings.html', form=form)
 
 
 #####################

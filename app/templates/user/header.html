@@ -51,21 +51,19 @@
                     <i class="fas fa-sign-out-alt"></i>
                 </a>
                 <div class="w3-bar-item py-2 w3-right">
-                    <form class="form-inline mt-2 mt-md-0 pl-3">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search Books" aria-label="Search">
-                        <a href="{{ url_for('search') }}">
-                        <button class="btn btn-outline-dark text-dark my-2 my-sm-0 search-button" type="submit">Search</button>
-                        </a>
+                    <form action="{{ url_for('search') }}" method="post" novalidate>
+                        <div class="form-inline">
+                            {{ form.search_item(size=32, id="search", class_="form-control mr-sm-2 bg-light mt-2 mt-md-0 pl-3") }}
+                            {{ form.search(class_="btn btn-outline-dark text-dark my-2 my-sm-0 search-button") }}
+                        </div>
                     </form>
                 </div>
             </div>
+        <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
+        <script src="{{ url_for('static', filename='./js/user.js') }}"></script>
         </div>
         {% block content %}
         {% endblock %}
     </div>
-  
-    <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
-    <script src="{{ url_for('static', filename='./js/user.js') }}"></script>
-                
 </body>
 </html>
