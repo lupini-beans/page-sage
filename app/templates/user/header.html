@@ -33,6 +33,21 @@
         </a>
     </div>  
 
+    <!-- Footer -->
+    <div class="w3-bottom">
+        <div class="w3-bar w3-card w3-center w3-small w3-padding-small w3-grey">
+            <a href="{{ url_for('terms') }}" class="w3-bar-item w3-button bg-transparent w3-padding w3-hover-white text-light w3-right" title="Toggle Navigation Menu">
+                Terms and Services
+            </a>
+            <a href="{{ url_for('privacy') }}" class="w3-bar-item w3-button bg-transparent w3-padding w3-hover-white text-light w3-right" title="Bookclub Page">
+                Privacy
+            </a>
+            <a href="{{ url_for('index') }}" class="w3-bar-item w3-right w3-button bg-transparent w3-padding w3-hover-white text-light w3-right" title="Logout">
+                About
+            </a>
+        </div>
+    </div>
+
     <!-- Main Content  -->
     <div id="main">
         <!-- Top Navbar -->
@@ -62,6 +77,7 @@
         <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
         <script src="{{ url_for('static', filename='./js/user.js') }}"></script>
         </div>
+        <!-- main page -->
         {% block content %}
         {% endblock %}
     </div>
